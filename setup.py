@@ -7,11 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
 
-version = re.search(
-    '^__version__\s*=\s*"(.*)"',
-    open('bootstrap/bootstrap.py').read(),
-    re.M
-    ).group(1)
+version = "0.0.1"
 
 setup(
     name='onenote-to-md',
@@ -24,12 +20,12 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/FL1CK/onenote-to-md',
-    py_modules=['my_tool', 'app'],
+    py_modules=['main', 'onenote_to_md'],
     packages=find_packages(),
     install_requires=[requirements],
     python_requires='>=3.7',
     classifiers=[
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Operating System :: OS Independent",
     ],
     entry_points="""
